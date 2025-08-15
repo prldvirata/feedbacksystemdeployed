@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-#i4+3c73!6#+ne-1n77iytvhht8e1*kkc=ane8iynq6li+m)kc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["pvirata.pythonanywhere.com"]
+ALLOWED_HOSTS = ["prldvirata.pythonanywhere.com"]
 
 # Application definition
 
@@ -71,12 +71,13 @@ WSGI_APPLICATION = 'feedbacksystem.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "prldvirata$default",
+        "NAME": "prldvirata$<your_db_name>",   # e.g. prldvirata$default or prldvirata$feedback
         "USER": "prldvirata",
-        "PASSWORD": "Thisisauthentic9!",  # Set when you created the DB
+        "PASSWORD": "<the MySQL password shown on the Databases page>",
         "HOST": "prldvirata.mysql.pythonanywhere-services.com",
         "PORT": "3306",
         "OPTIONS": {
