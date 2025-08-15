@@ -1,12 +1,14 @@
-{% extends "../base.html" %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block header_edits %}
-<script type="module" src="{% static '/feedbackapp/timeframe_handler.js' %}"></script>
-<script type="module" src="{% static '/feedbackapp/filtering.js' %}"></script>
-<script type="module" src="{% static '/feedbackapp/ui_interactions.js' %}"></script>
+<script type="module" src="{% static 'feedbackapp/timeframe_handler.js' %}"></script>
+<script type="module" src="{% static 'feedbackapp/filtering.js' %}"></script>
+<script type="module" src="{% static 'feedbackapp/ui_interactions.js' %}"></script>
 {% endblock %}
+
 {% block content %}
+<h2 class="d-inline">Feedback Reports</h2>
 <!-- dropdown date range picker -->
 <h2 class="d-inline">Feedback Reports</h2>
 <div class="d-inline float-end">
