@@ -28,7 +28,7 @@ class Feedback(models.Model):
 
     class Meta:
         db_table = 'feedback'
-        # managed = False
+        managed = False
 
     def __str__(self):
         return f"{self.name or 'Anonymous'} ({self.visit_date})"
