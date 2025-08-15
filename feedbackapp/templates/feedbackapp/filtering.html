@@ -1,0 +1,162 @@
+<div class="card mt-4 mb-4">
+  <div class="card-header">
+    <button
+      class="btn btn-link w-100 text-start text-decoration-none d-flex justify-content-between align-items-center"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#filtersCollapse"
+      aria-expanded="false"
+      aria-controls="filtersCollapse" >
+      Custom Filters
+    </button>
+  </div>
+
+  <div id="filtersCollapse" class="collapse">
+    <div class="card-body">
+      <div class="row g-3 mb-4">
+        <div class="col-6 col-md">
+          <h5 class="mb-2">Overall</h5>
+          <div class="mb-2">
+            <label for="minOverall" class="form-label mb-0">Min:</label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              id="minOverall"
+              aria-label="Minimum Overall Rating"
+              min="0"
+              max="5"
+            />
+          </div>
+          <div>
+            <label for="maxOverall" class="form-label mb-0">Max:</label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              id="maxOverall"
+              aria-label="Maximum Overall Rating"
+              min="0"
+              max="5"
+            />
+          </div>
+        </div>
+        <div class="col-6 col-md">
+          <h5 class="mb-2">Food</h5>
+          <div class="mb-2">
+            <label for="minFood" class="form-label mb-0">Min:</label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              id="minFood"
+              aria-label="Minimum Food Rating"
+              min="0"
+              max="5"
+            />
+          </div>
+          <div>
+            <label for="maxFood" class="form-label mb-0">Max:</label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              id="maxFood"
+              aria-label="Maximum Food Rating"
+              min="0"
+              max="5"
+            />
+          </div>
+        </div>
+        <div class="col-6 col-md">
+          <h5 class="mb-2">Cleanliness</h5>
+          <div class="mb-2">
+            <label for="minCleanliness" class="form-label mb-0">Min:</label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              id="minCleanliness"
+              aria-label="Minimum Cleanliness Rating"
+              min="0"
+              max="5"
+            />
+          </div>
+          <div>
+            <label for="maxCleanliness" class="form-label mb-0">Max:</label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              id="maxCleanliness"
+              aria-label="Maximum Cleanliness Rating"
+              min="0"
+              max="5"
+            />
+          </div>
+        </div>
+        <div class="col-6 col-md">
+          <h6 class="mb-2">Service</h5>
+          <div class="mb-2">
+            <label for="minService" class="form-label mb-0">Min:</label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              id="minService"
+              aria-label="Minimum Service Rating"
+              min="0"
+              max="5"
+            />
+          </div>
+          <div>
+            <label for="maxService" class="form-label mb-0">Max:</label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              id="maxService"
+              aria-label="Maximum Service Rating"
+              min="0"
+              max="5"
+            />
+          </div>
+        </div>
+        <div class="col-6 col-md">
+          <h6 class="mb-2">Ambience</h5>
+          <div class="mb-2">
+            <label for="minAmbience" class="form-label mb-0">Min:</label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              id="minAmbience"
+              aria-label="Minimum Ambience Rating"
+              min="0"
+              max="5"
+            />
+          </div>
+          <div>
+            <label for="maxAmbience" class="form-label mb-0">Max:</label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              id="maxAmbience"
+              aria-label="Maximum Ambience Rating"
+              min="0"
+              max="5"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div id="filterContainer" class="justify-content-center d-flex flex-wrap gap-2">
+          <span id="lunch" class="badge rounded-pill filter-pill active" >Lunch</span>
+          <span id="dinner" class="badge rounded-pill filter-pill active" >Dinner</span>
+          <span id="suggestions" class="badge rounded-pill filter-pill active">Suggestions</span>
+          <span id="no_suggestions" class="badge rounded-pill filter-pill active" >No Suggestions</span>
+          <span id="comment" class="badge rounded-pill filter-pill active" >Comment</span>
+          <span id="no_comment" class="badge rounded-pill filter-pill active" >No Comment</span>
+          <span id="recommend" class="badge rounded-pill filter-pill active" >Recommend</span>
+          <span id="not_recommend" class="badge rounded-pill filter-pill active" >Wouldn't Recommend</span>
+        </div>
+      </div>
+      <div class="d-grid gap-2 mt-3">
+        <button id="applyFilters" class="btn btn-primary">
+          Apply All Filters
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+{% for review in recent_feedbacks %}
+<div class="modal fade" id="feedback{{ review.feedback_id }}" tabindex="-1" aria-labelledby="dataModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="feedbackModalLabel{{ review.id }}"> 
+          {{review.name}}
+          {% if review.name %}
+            {{ review.name }}'s Review
+          {% else %}
+            Anonymous's Review
+          {% endif %}
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <h5>Ratings</h5>
+          <div>
+            <p class="lead"><strong>Overall:</strong>
+              {% for i in "12345" %}
+                {% if forloop.counter <= review.overall_rating %}
+                  ★
+                {% else %}
+                  ☆
+                {% endif %}
+              {% endfor %}
+            </p>
+          </div>
+          <div>
+            <p><strong>Food:</strong>
+              {% for i in "12345" %}
+                {% if forloop.counter <= review.food_rating %}
+                  ★
+                {% else %}
+                  ☆
+                {% endif %}
+              {% endfor %}
+            </p>
+          </div>
+          <div>
+            <p><strong>Cleanliness:</strong>
+              {% for i in "12345" %}
+                {% if forloop.counter <= review.cleanliness_rating %}
+                  ★
+                {% else %}
+                  ☆
+                {% endif %}
+              {% endfor %}
+            </p>
+          </div>
+          <div>
+            <p><strong>Ambience:</strong>
+              {% for i in "12345" %}
+                {% if forloop.counter <= review.ambience_rating %}
+                  ★
+                {% else %}
+                  ☆
+                {% endif %}
+              {% endfor %}
+            </p>
+          </div>
+          <div>
+              <p><strong>Service:</strong>
+              {% for i in "12345" %}
+                {% if forloop.counter <= review.service_rating %}
+                  ★
+                {% else %}
+                  ☆
+                {% endif %}
+              {% endfor %}
+              </p>
+          </div>
+          {% if review.comment %}
+              <hr>
+              <h5>Comment:</h5>
+              <p>{{ review.comment|linebreaksbr }}</p>
+          {% endif %}
+
+          {% if review.suggestions %}
+            <hr>
+            <h5>Suggestions:</h5>
+            <p>{{ review.suggestions|linebreaksbr }}</p>
+          {% endif %}
+
+          <hr>
+          <p>
+            {% if review.recommendation == "Yes" %}
+              <strong class="text-success">Would Recommend</strong>
+            {% else %}
+              <strong class="text-danger">Would NOT Recommend</strong>
+            {% endif %}
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}

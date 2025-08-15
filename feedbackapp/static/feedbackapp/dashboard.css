@@ -1,0 +1,108 @@
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    height: 60px;  /* Shrink the logo */
+}
+
+.summary-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.card {
+    flex: 1 1 30%;
+    background: #f3f3f3;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+th, td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+th {
+    background: #f9f9f9;
+}
+.feedback-row:hover{
+  background: #dddddd;
+}
+/*PILL STYLING*/
+.filter-pill {
+  cursor: pointer;
+  background-color: white;      
+  color: maroon !important;
+  border: 2px solid maroon;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filter-pill:hover {
+  background-color: #dddddd;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.filter-pill.active {
+  background-color: maroon;
+  color: white !important;
+  font-weight: 600;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.switch-pill {
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  background-color: maroon;
+  color: white !important;
+  font-weight: 600;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.switch-pill.active {
+  background-color: yellow;
+  color: maroon !important;
+  border: 2px solid maroon;
+}
+
+.chart-switch-pill {
+  cursor: pointer;
+  background-color: maroon;
+  color: white !important;
+  font-weight: 600;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chart-switch-pill.active {
+  background-color: yellow;
+  color: maroon !important;
+  border: 2px solid maroon;
+}

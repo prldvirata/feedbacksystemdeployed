@@ -1,0 +1,223 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Persis Biryani Feedback Form</title>
+  <style>
+    @media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .star-rating {
+        font-size: 20px;
+    }
+
+    button {
+        width: 100%;
+    }
+    }
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 100%;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      height: 60px;
+    }
+
+    .rating-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 15px;
+    }
+
+    .rating-row label {
+    min-width: 10px; /* adjust as needed */
+    font-weight: bold;
+    margin: 0;
+    }
+
+    .star-rating {
+    direction: rtl;
+    display: inline-flex;
+    font-size: 24px;
+    }
+
+    .star-rating input[type="radio"] {
+    display: none;
+    }
+
+    .star-rating label {
+    color: lightgray;
+    cursor: pointer;
+    transition: color 0.2s;
+    }
+
+    .star-rating input[type="radio"]:checked ~ label {
+    color: orange;
+    }
+
+    .star-rating label:hover,
+    .star-rating label:hover ~ label {
+    color: orange;
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .checkbox-group {
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: goldenrod;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      display: block;
+    }
+    select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="{% static 'feedbackapp/PersisLogo1.png' %}" alt="Persis Logo" style="max-width: 100%; height: auto;">
+
+
+ <form method="POST">
+  {% csrf_token %}
+
+  <label for="name">Name (optional)</label>
+  <input type="text" id="name" name="name">
+
+  <label for="email">Email (optional)</label>
+  <input type="email" id="email" name="email">
+
+  <label for="date">Date of Visit</label>
+  <input type="date" id="date" name="visit_date">
+  <script>
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('date').value = today;
+  </script>
+
+  <label for="visit_time">Time of Visit</label>
+<select id="visit_time" name="visit_time" required>
+  <option value="">-- Select --</option>
+  <option value="Lunch">Lunch</option>
+  <option value="Dinner">Dinner</option>
+</select>
+
+  <label>Food Quality</label>
+  <div class="star-rating">
+    <input type="radio" id="food5" name="food_rating" value="5"><label for="food5">★</label>
+    <input type="radio" id="food4" name="food_rating" value="4"><label for="food4">★</label>
+    <input type="radio" id="food3" name="food_rating" value="3"><label for="food3">★</label>
+    <input type="radio" id="food2" name="food_rating" value="2"><label for="food2">★</label>
+    <input type="radio" id="food1" name="food_rating" value="1"><label for="food1">★</label>
+  </div>
+
+  <label>Cleanliness</label>
+  <div class="star-rating">
+    <input type="radio" id="clean5" name="cleanliness_rating" value="5"><label for="clean5">★</label>
+    <input type="radio" id="clean4" name="cleanliness_rating" value="4"><label for="clean4">★</label>
+    <input type="radio" id="clean3" name="cleanliness_rating" value="3"><label for="clean3">★</label>
+    <input type="radio" id="clean2" name="cleanliness_rating" value="2"><label for="clean2">★</label>
+    <input type="radio" id="clean1" name="cleanliness_rating" value="1"><label for="clean1">★</label>
+  </div>
+
+  <label>Service</label>
+  <div class="star-rating">
+    <input type="radio" id="service5" name="service_rating" value="5"><label for="service5">★</label>
+    <input type="radio" id="service4" name="service_rating" value="4"><label for="service4">★</label>
+    <input type="radio" id="service3" name="service_rating" value="3"><label for="service3">★</label>
+    <input type="radio" id="service2" name="service_rating" value="2"><label for="service2">★</label>
+    <input type="radio" id="service1" name="service_rating" value="1"><label for="service1">★</label>
+  </div>
+
+  <label>Ambience</label>
+  <div class="star-rating">
+    <input type="radio" id="ambience5" name="ambience_rating" value="5"><label for="ambience5">★</label>
+    <input type="radio" id="ambience4" name="ambience_rating" value="4"><label for="ambience4">★</label>
+    <input type="radio" id="ambience3" name="ambience_rating" value="3"><label for="ambience3">★</label>
+    <input type="radio" id="ambience2" name="ambience_rating" value="2"><label for="ambience2">★</label>
+    <input type="radio" id="ambience1" name="ambience_rating" value="1"><label for="ambience1">★</label>
+  </div>
+
+  <label>Overall Rating</label>
+  <div class="star-rating">
+    <input type="radio" id="overall5" name="overall_rating" value="5"><label for="overall5">★</label>
+    <input type="radio" id="overall4" name="overall_rating" value="4"><label for="overall4">★</label>
+    <input type="radio" id="overall3" name="overall_rating" value="3"><label for="overall3">★</label>
+    <input type="radio" id="overall2" name="overall_rating" value="2"><label for="overall2">★</label>
+    <input type="radio" id="overall1" name="overall_rating" value="1"><label for="overall1">★</label>
+  </div>
+
+  <label for="comment">Additional Comments</label>
+  <textarea id="comment" name="comment"></textarea>
+
+  <label for="suggestions">Suggestions</label>
+  <textarea id="suggestions" name="suggestions"></textarea>
+
+  <label>Would you recommend us?</label>
+  <div class="radio-group">
+    <label><input type="radio" name="recommendation" value="Yes" required> Yes</label>
+    <label><input type="radio" name="recommendation" value="No"> No</label>
+  </div>
+
+  <div class="checkbox-group">
+    <label>
+      <input type="checkbox" required>
+      "I understand that this feedback will be used for internal purposes only and will not be published."
+    </label>
+  </div>
+
+  <button type="submit">SUBMIT YOUR RESPONSE</button>
+</form>
+
+</body>
+</html>

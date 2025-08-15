@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Feedback Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: goldenrod;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .nowrap {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Customer Feedback Records</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th class="nowrap">Date</th>
+                <th>Name</th>
+                <th>Lunch/Dinner</th>
+                <th>Food</th>
+                <th>Cleanliness</th>
+                <th>Service</th>
+                <th>Ambience</th>
+                <th>Overall</th>
+                <th>Recommend</th>
+                <th>Comment</th>
+                <th>Suggestions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for feedback in feedbacks %}
+            <tr class="feedback-row">
+                <td class="nowrap">{{ feedback.visit_date }}</td>
+                <td>{{ feedback.name }}</td>
+                <td>{{ feedback.visit_time }}</td>
+                <td>{{ feedback.food_rating }}</td>
+                <td>{{ feedback.cleanliness_rating }}</td>
+                <td>{{ feedback.service_rating }}</td>
+                <td>{{ feedback.ambience_rating }}</td>
+                <td>{{ feedback.overall_rating }}</td>
+                <td>{{ feedback.recommendation }}</td>
+                <td>{{ feedback.comment }}</td>
+                <td>{{ feedback.suggestions }}</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="12">No feedback submitted yet.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
