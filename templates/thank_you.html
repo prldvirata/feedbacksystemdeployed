@@ -46,18 +46,18 @@
     a:hover {
       text-decoration: underline;
     }
-
-    img {
-      display: block;
-      margin: 0 auto 20px;
-      max-width: 100%;
-    }
+    .logo {
+    width: clamp(180px, 35vw, 360px);
+    height: auto;
+    display: block;
+    margin: 0 auto 40px;
+  }
   </style>
 </head>
 <body>
 
   <!-- Logo -->
-<img src="{% static 'feedbackapp/PersisLogo1.png' %}" alt="Persis Logo">
+<img src="{% static 'feedbackapp/PersisLogo1.png' %}" alt="Persis Logo" class="logo">
 
 
   <!-- Thank you message -->
