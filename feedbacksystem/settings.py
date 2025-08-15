@@ -75,9 +75,9 @@ WSGI_APPLICATION = 'feedbacksystem.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "prldvirata$<your_db_name>",   # e.g. prldvirata$default or prldvirata$feedback
+        "NAME": "prldvirata$",
         "USER": "prldvirata",
-        "PASSWORD": "<the MySQL password shown on the Databases page>",
+        "PASSWORD": "Thisisauthentic9!",
         "HOST": "prldvirata.mysql.pythonanywhere-services.com",
         "PORT": "3306",
         "OPTIONS": {
